@@ -1,11 +1,11 @@
 ﻿using Intro.Business;
+using Intro.DataAccess.Concretes;
 using Intro.Entities;
 
 Console.WriteLine("Hello, World!");
 
 string message1 = "Krediler";
-int term = 12;
-double amount = 100000;
+
 
 bool isAuthenticated = true;
 Console.WriteLine(message1);
@@ -28,9 +28,9 @@ for (int i = 0; i < loans.Length; i++)
 
 
 
-CourseManager courseManager = new();
-Course[] courses2 = courseManager.GetAll();
-for (int i = 0; i < courses2.Length; i++)
+CourseManager courseManager = new(new EfCourseDal());
+List<Course> courses2 = courseManager.GetAll();
+for (int i = 0; i < courses2.Count; i++)
 {
     Console.WriteLine(courses2[i].Name + " / " + courses2[i].Price);
 }

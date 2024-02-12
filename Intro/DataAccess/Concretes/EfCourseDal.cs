@@ -1,22 +1,17 @@
 ﻿using Intro.DataAccess.Abstracts;
 using Intro.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Intro.DataAccess.Concretes;
 
-public class CourseDal : ICourseDal
+public class EfCourseDal : ICourseDal
 {
     List<Course> courses;
-    public CourseDal()
+    public EfCourseDal()
     {
 
         Course course1 = new Course();
         course1.Id = 1;
-        course1.Name = "C#";
+        course1.Name = "JavaScript";
         course1.Description = ".NET 8 vs...";
         course1.Price = 0;
 
